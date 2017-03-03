@@ -1,5 +1,12 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      {{#link-to 'index' class='navbar-brand'}}HKBoard{{/link-to}}
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active">{{#link-to 'index'}}Home{{/link-to}}</li>
+      <li>{{#link-to 'new-question'}}New Post{{/link-to}}</li>
+    </ul>
+  </div>
+</nav>
 {{outlet}}

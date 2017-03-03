@@ -1,0 +1,40 @@
+{{edit-qanda qanda=model saveEdit="saveEdit"}}
+
+<div class='container'>
+  <h3 class='text-center'>{{model.q}}
+    <button class='btn'{{action "upBtn" model.thumbsup model}}>
+      <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">  {{model.thumbsup}}</span>
+    </button>
+    <button class='btn'{{action "downBtn" model.thumbsdown model}}>
+      <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true">  {{model.thumbsdown}}</span>
+    </button>
+  </h3>
+<hr />
+
+<div class='table-responsive'>
+<table class="table table-striped">
+  <tr>
+    <td class='text-center user'>
+      <h4>{{model.author}}</h4><br />
+      <img src='{{model.profilePic}}' />'
+    </td>
+
+    <td class='content'>
+      {{model.note}}
+    </td>
+  </tr>
+</table>
+</div>
+
+</div>
+
+<div class='container'>
+  {{#each model.answers as |answer|}}
+    {{answer-list answer=answer}}
+  {{/each}}
+</div>
+
+
+<div class='container'>
+  {{new-answer question=model submitReply="submitReply"}}
+</div>

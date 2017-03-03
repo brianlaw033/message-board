@@ -1,0 +1,29 @@
+img{
+  width: 50px;
+}
+
+.user{
+  width:30%;
+}
+
+.content{
+  width:70%;
+}
+
+.content>h4{
+  padding-top: 10px;
+}
+
+table{
+  border: 1px solid black;
+}
+
+.list-content{
+  width:70%;
+}
+.list-user{
+  width:20%;
+}
+.list-thumbs{
+  width:10%;
+}

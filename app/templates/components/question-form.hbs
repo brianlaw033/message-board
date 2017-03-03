@@ -1,0 +1,9 @@
+<form>
+  <div class='form-group'>
+    {{textarea cols='100' rows='1' value=author id='author' placeholder='User Name'}}<br />
+    {{textarea cols='100' rows='1' value=profilePic id='profilePic' placeholder='Profile Picture URL'}}<br />
+    {{textarea cols='100' rows='1' value=q id='q' placeholder='Title'}}<br />
+    {{textarea cols='100' rows='6' value=note id='note' placeholder='Content'}}<br />
+  </div>
+  <button class='btn' {{action 'submitPost'}}>Submit</button>
+</form>

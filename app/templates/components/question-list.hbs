@@ -1,0 +1,22 @@
+<!-- {{#link-to 'message-board' qanda.id}}<h4>{{qanda.q}}</h4>{{/link-to}}
+<h4>{{qanda.author}}</h4> -->
+<table class="table table-striped">
+  <tr>
+    <td class='text-center list-content'>
+      <h4>{{#link-to 'message-board' qanda.id}}<h4>{{qanda.q}}</h4>{{/link-to}}</h4><br />
+    </td>
+
+    <td class='list-user'>
+      <h4>{{qanda.author}}</h4>
+    </td>
+
+    <td class='list-thumbs'>
+        <h4>
+          <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+          {{qanda.thumbsup}}
+          <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+          {{qanda.thumbsdown}}
+        </h4>
+    </td>
+  </tr>
+</table>

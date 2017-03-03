@@ -1,0 +1,30 @@
+{{#if torf}}
+<button class='btn'{{action "showEdit"}}>Edit</button><br />
+{{else}}
+<button class='btn'{{action "saveEdit" qanda}}>Save</button><br />
+<div class='container'>
+  {{textarea cols='100' rows='1' value=qanda.q id='q2'}}<br />
+<hr />
+
+<div class='table-responsive'>
+<table class="table table-striped">
+  <tr>
+    <td class='text-center user'>
+      {{textarea cols='30' rows='1' value=qanda.author id='author2'}}<br />
+      {{textarea cols='30' rows='3' value=qanda.profilePic id='profilePic2'}}<br />
+    </td>
+
+    <td class='content'>
+      {{textarea cols='70' rows='6' value=qanda.note id='note2'}}
+    </td>
+  </tr>
+</table>
+</div>
+
+</div>
+<!-- <div class='container'>
+  {{#each qanda.answers as |answer|}}
+    {{edit-answer answer=answer}}
+  {{/each}}
+</div> -->
+{{/if}}
