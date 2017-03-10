@@ -1,0 +1,10 @@
+<div>
+  <ul class='list-unstyled'>
+    {{#each lm.items as |item|}}
+        <li>
+            {{#link-to 'message-board' item.id}} {{item.q}} {{/link-to}}
+            <button class='btn-danger'{{action 'removeFromCart' item}}><span class="glyphicon glyphicon-minus" aria-hidden="true"></span></button>
+        </li>
+    {{/each}}
+  </ul>
+</div>

@@ -9,7 +9,8 @@ export default Ember.Component.extend({
         profilePic: this.get('profilePic')? this.get('profilePic'): "http://vignette4.wikia.nocookie.net/evchk/images/b/bb/NomoreP.png/revision/latest?cb=20100822150604",
         q: this.get('q')? this.get('q'): "",
         thumbsup: 0,
-        thumbsdown: 0
+        thumbsdown: 0,
+        thumbsdiff: 0
       };
       this.sendAction('submitPost', params);
     }

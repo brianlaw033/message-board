@@ -1,12 +1,14 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  sortBy: ['thumbsdiff:desc'],
-  sortedAns: Ember.computed.sort('qandas', 'sortBy'),
   lm: Ember.inject.service(),
   actions:{
-    addToLm(item){
+    removeFromCart(item){
+      this.get('lm').remove(item);
+    },
+    addToCart(item){
       this.get('lm').add(item);
-    }
+    },
+
   }
 });

@@ -17,13 +17,35 @@ img{
 table{
   border: 1px solid black;
 }
-
+.list-star{
+  width:10%;
+}
 .list-content{
-  width:70%;
+  width:60%;
+  padding-top: 15px;
 }
 .list-user{
   width:20%;
 }
 .list-thumbs{
   width:10%;
+}
+
+.ans-btn{
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.star{
+  color: white;
+  background-color: #FCC94F;
+}
+
+.star:hover{
+  color: white;
+  opacity: 0.7;
+}
+
+.lm-box{
+  border: 2px black;
 }

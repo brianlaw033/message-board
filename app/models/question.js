@@ -7,5 +7,6 @@ export default DS.Model.extend({
   profilePic: DS.attr(),
   answers: DS.hasMany('answer', { async: true }),
   thumbsup: DS.attr(),
-  thumbsdown:DS.attr()
+  thumbsdown:DS.attr(),
+  users: DS.hasMany('user', {async: true})
 });

@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  lm: Ember.inject.service(),
   model(params) {
     return this.store.findRecord('question', params.question_id);
   },
@@ -27,19 +28,28 @@ export default Ember.Route.extend({
       qanda.save();
     },
 
-    upBtn(num, model){
+    upBtn(num, diff, model){
       var count = parseInt(num);
       count++;
+      var tempDiff = parseInt(diff);
+      tempDiff++;
       model.set("thumbsup", count);
+      model.set("thumbsdiff", tempDiff);
       model.save();
     },
 
-    downBtn(num, model){
+    downBtn(num, diff, model){
       var count = parseInt(num);
       count--;
+      var tempDiff = parseInt(diff);
+      tempDiff--;
       model.set("thumbsdown", count);
+      model.set("thumbsdiff", tempDiff);
       model.save();
-    }
+    },
 
+    addToLm(item){
+      this.get('lm').add(item);
+    }
   }
 });

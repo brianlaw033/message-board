@@ -1,22 +1,31 @@
-<!-- {{#link-to 'message-board' qanda.id}}<h4>{{qanda.q}}</h4>{{/link-to}}
-<h4>{{qanda.author}}</h4> -->
-<table class="table table-striped">
-  <tr>
-    <td class='text-center list-content'>
-      <h4>{{#link-to 'message-board' qanda.id}}<h4>{{qanda.q}}</h4>{{/link-to}}</h4><br />
-    </td>
+{{#each qandas as |qanda|}}
+  <table class="table table-bordered">
+    <tr>
+      <td class='text-center list-star'>
+        <button class='btn star' {{action "addToLm" qanda}}>
+          <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+        </button>
+      </td>
+      <td class='text-center list-content'>
+        <h4>{{#link-to 'message-board' qanda.id}}<h4>{{fire qanda}} {{qanda.q}}</h4>{{/link-to}}</h4><br />
+      </td>
 
-    <td class='list-user'>
-      <h4>{{qanda.author}}</h4>
-    </td>
+      <td class='text-center list-user'>
+        <h4>{{qanda.author}}</h4>
+      </td>
 
-    <td class='list-thumbs'>
-        <h4>
-          <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
-          {{qanda.thumbsup}}
-          <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
-          {{qanda.thumbsdown}}
-        </h4>
-    </td>
-  </tr>
-</table>
+      <td class='list-thumbs'>
+          <h4>
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
+            {{qanda.thumbsup}}
+            <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
+            {{qanda.thumbsdown}}
+          </h4>
+      </td>
+    </tr>
+  </table>
+{{/each}}
+
+<div class='lm-box'>
+  {{lm-list}}
+</div>

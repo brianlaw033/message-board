@@ -1,11 +1,20 @@
+{{#each sortedAns as |answer|}}
 <div class='table-responsive'>
 
-<table class="table table-striped">
+<table class="table table-bordered">
 <tr>
 
   <td class='text-center user'>
     <h4>{{answer.author}}</h4><br />
     <img src='{{answer.profilePic}}' />'<br />
+    <div class='ans-btn'>
+      <button class='btn'{{action "upBtn" answer.thumbsup answer.thumbsdiff answer}}>
+        <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true">  {{answer.thumbsup}}</span>
+      </button>
+      <button class='btn'{{action "downBtn" answer.thumbsdown answer.thumbsdiff answer}}>
+        <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true">  {{answer.thumbsdown}}</span>
+      </button>
+    </div>
   </td>
 
   <td class='content'>
@@ -16,3 +25,4 @@
 </table>
 
 </div>
+{{/each}}

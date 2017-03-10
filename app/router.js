@@ -9,6 +9,7 @@ const Router = Ember.Router.extend({
 Router.map(function() {
   this.route('message-board', {path: '/message-board/:question_id'});
   this.route('new-question');
+  this.route('lmlist');
 });
 
 export default Router;
